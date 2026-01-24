@@ -1,343 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tattvo Courses | New Batch Starts Feb 5</title>
 
-<!-- ================= SEO META ================= -->
-<title>TattvoTech Courses | Java, React, Python, SQL, Salesforce Training</title>
-<meta name="description" content="TattvoTech offers industry-focused training in Java, Web Development, React, Python, SQL and Salesforce. 2 hours daily classes with certification and hands-on projects.">
-<meta name="keywords" content="TattvoTech, Java Course, React Course, Python Course, SQL Course, Salesforce Training, Software Training Institute">
-<meta name="author" content="TattvoTech">
-<meta name="robots" content="index, follow">
+  <meta name="description" content="New batch starts Feb 5th. Learn Java, Python, Full Stack, React, Backend & Salesforce with Tattvo Tech." />
 
-<!-- Open Graph -->
-<meta property="og:title" content="TattvoTech Courses">
-<meta property="og:description" content="Industry-focused training with certification and career support.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tattvotech.com">
-<meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+  <style>
+    /* ================= BASE ================= */
+    * { box-sizing: border-box; }
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+      background: #ffffff;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-<meta charset="UTF-8">
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    a { text-decoration: none; }
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    :root {
+      --purple: #6a1b9a;
+      --purple-dark: #4a148c;
+      --purple-light: #f3e5f5;
+      --gray: #6b7280;
+    }
 
-<style>
-:root{
-  --bg:#ffffff; --text:#111; --muted:#666;
-  --card:#f4f6fb; --primary:#1e3c72; --accent:#ffd700;
-}
-body.dark{
-  --bg:#0b0e14; --text:#f5f5f5; --muted:#aaa; --card:#141824;
-}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
-body{background:var(--bg);color:var(--text);transition:.3s;overflow-x:hidden}
-.container{max-width:1200px;margin:auto;padding:0 20px}
+    /* ================= HEADER ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      border-bottom: 1px solid #eee;
+    }
 
-/* HEADER */
-header{
-  position:sticky;top:0;background:var(--bg);
-  border-bottom:1px solid rgba(0,0,0,.08);z-index:100
-}
-.nav{display:flex;justify-content:space-between;align-items:center;height:70px}
-.nav h2{color:var(--primary)}
-.nav button{padding:8px 16px;border-radius:20px;border:none;cursor:pointer}
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--purple);
+    }
 
-/* HERO */
-.hero{
-  padding:160px 0;
-  background:
-    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
-    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f")
-    center/cover no-repeat;
-  color:white;
-}
-.hero h1{font-size:56px;line-height:1.1}
-.hero span{color:var(--accent)}
-.hero p{margin:20px 0;font-size:20px;max-width:760px}
-.cta button{
-  padding:16px 42px;border:none;border-radius:40px;
-  background:var(--accent);font-weight:800;cursor:pointer;
+    .signin {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-weight: 700;
+      cursor: not-allowed;
+    }
+
+    /* ================= BATCH BANNER ================= */
+    .batch-banner {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      text-align: center;
+      padding: 14px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    /* ================= HERO (3D) ================= */
+    .hero {
+      min-height: 100vh;
+      padding: 120px 40px;
+      background: radial-gradient(circle at top left, #ede7f6, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+    }
+
+    .hero-card {
+      max-width: 1150px;
+      width: 100%;
+      padding: 90px 80px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff, #f6f1fa);
+      box-shadow: 0 50px 120px rgba(106,27,154,0.25);
+      transform: rotateX(6deg) rotateY(-6deg);
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span { color: var(--purple); }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 760px;
+      color: var(--gray);
+    }
+
+    .hero-tags {
+      margin-top: 32px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ================= SECTIONS ================= */
+    .section {
+      padding: 120px 48px;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section p.sub {
+      text-align: center;
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* ================= COURSES ================= */
+    .courses {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+    }
+
+    .card {
+      border-radius: 24px;
+      padding: 38px;
+      background: white;
+      border: 1px solid #eee;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--purple);
+      font-size: 24px;
+    }
+
+    .meta {
+      font-size: 15px;
+      color: var(--gray);
+      margin: 12px 0 16px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .btn.primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .btn.outline {
+      border: 2px solid var(--purple);
+      color: var(--purple);
+      background: white;
+    }
+
+    /* ================= WHY ================= */
+    .why {
+      margin-top: 120px;
+      background: var(--purple-light);
+      border-radius: 40px;
+      padding: 90px;
+    }
+
+    .why-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 28px;
+    }
+
+    .why-box {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      font-weight: 700;
+    }
+
+    /* ================= CTA ================= */
+    .cta {
+      margin-top: 140px;
+      padding: 120px 40px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      text-align: center;
+      border-radius: 50px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      font-size: 20px;
+      opacity: .95;
+    }
+
+    /* ================= WHATSAPP ================= */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 64px;
+      height: 64px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+
+/* ================= FORM SECTION ================= */
+.form-wrapper {
+  max-width: 760px;
+  margin: 60px auto 0;
+  background: white;
+  border-radius: 26px;
+  padding: 22px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.15);
 }
 
-/* SECTIONS */
-section{padding:110px 0}
-.section-title{font-size:42px;margin-bottom:20px}
-.section-desc{font-size:18px;color:var(--muted);max-width:900px;margin-bottom:60px}
-
-/* FEATURE SLIDER */
-.slider-wrap{overflow:hidden}
-.slider{display:flex;gap:30px;transition:.6s ease}
-.slide{
-  min-width:320px;background:var(--card);
-  padding:40px;border-radius:24px;
-  font-size:22px;font-weight:700;
+.form-wrapper iframe {
+  width: 100%;
+  height: 900px;
+  border: none;
+  border-radius: 18px;
 }
 
-/* COURSES */
-.courses{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:35px;
-}
-.course{
-  background:var(--card);
-  padding:36px;border-radius:26px;
-  transition:.3s;
-}
-.course:hover{transform:translateY(-10px)}
-.course i{font-size:38px;color:var(--primary);margin-bottom:15px}
-.course h3{font-size:26px;margin-bottom:10px}
-.course ul{padding-left:20px}
-.course li{margin-bottom:8px}
-
-/* VIDEO */
-.video-wrap{
-  position:relative;padding-top:56.25%;
-  border-radius:30px;overflow:hidden;
-}
-.video-wrap iframe{
-  position:absolute;inset:0;width:100%;height:100%;border:none;
+@media (max-width: 768px) {
+  .form-wrapper iframe {
+    height: 1150px;
+  }
 }
 
-/* TESTIMONIALS */
-.testimonials{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:35px;
-}
-.testimonial{
-  background:var(--card);
-  padding:35px;border-radius:26px;
-}
-.testimonial i{color:var(--accent)}
-.testimonial p{margin:15px 0;font-style:italic}
-
-/* INFO */
-.info{background:var(--primary);color:white}
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:40px;text-align:center;
-}
-.info-grid h3{font-size:30px}
-
-/* CERTIFICATE */
-.certificate{
-  background:linear-gradient(120deg,var(--card),transparent);
-  padding:80px;border-radius:34px;
+/* ================= FOOTER ================= */
+.site-footer {
+  background: #0f0b1e;
+  color: #c7c3d9;
+  padding: 80px 40px 40px;
+  margin-top: 120px;
 }
 
-/* FOOTER */
-footer{background:#0a0a0a;color:#aaa;padding:80px 0}
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 50px;
 }
-footer h3{color:white}
 
-/* POPUP */
-.popup{
-  position:fixed;inset:0;background:rgba(0,0,0,.6);
-  display:none;align-items:center;justify-content:center;
+.footer-col h3 {
+  color: #ffffff;
+  margin-bottom: 18px;
+  font-size: 18px;
 }
-.popup.active{display:flex}
-.popup-box{
-  background:var(--bg);padding:40px;border-radius:24px;
-  width:100%;max-width:420px;
-}
-.popup-box input{width:100%;padding:12px;margin-bottom:14px}
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;right:20px;bottom:20px;
-  background:#25d366;color:white;
-  padding:14px 22px;border-radius:50px;
-  font-weight:800;text-decoration:none;
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #b9b6cc;
 }
-</style>
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #b9b6cc;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #b76cff;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.social-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(183,108,255,0.12);
+  color: #b76cff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #b76cff;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.footer-right {
+  text-align: left;
+}
+
+.contact-title {
+  margin-top: 30px;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 13px;
+  color: #8f8ba8;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 60px 24px 30px;
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+}
+
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+      header { padding: 18px 24px; }
+      .hero-card {
+        padding: 60px 30px;
+        transform: none;
+      }
+      .hero h1 { font-size: 38px; }
+      .section { padding: 90px 24px; }
+      .why { padding: 50px 30px; }
+      .cta h2 { font-size: 34px; }
+    }
+  </style>
 </head>
-
 <body>
 
+<!-- BATCH -->
+<div class="batch-banner">
+  🚀 New Batch Starts on <strong>February 5th</strong> — Limited Seats Available!
+</div>
+
+<!-- HEADER -->
 <header>
-  <div class="container nav">
-    <h2>TattvoTech</h2>
-    <button onclick="toggleTheme()">🌗 Theme</button>
-  </div>
+  <div class="logo">Tattvo Courses</div>
+  <div class="signin">🔒 Sign In</div>
 </header>
 
 <!-- HERO -->
-<section class="hero reveal">
-  <div class="container">
-    <h1>Build Your Career with <span>TattvoTech</span></h1>
-    <p>Industry-focused training programs designed to make you job-ready with real-world skills and certification.</p>
-    <div class="cta"><button onclick="openPopup()">Enquire Now</button></div>
-  </div>
-</section>
+<section class="hero">
+  <div class="hero-card">
+    <h1>Build Skills for <span>Real Careers</span></h1>
+    <p>
+      Industry-ready programs by Tattvo Tech with transparent syllabus,
+      clear fees, and structured learning paths.
+    </p>
 
-<!-- FEATURED -->
-<section class="container reveal">
-  <h2 class="section-title">Featured Programs</h2>
-  <div class="slider-wrap">
-    <div class="slider" id="slider">
-      <div class="slide">Java Full Stack</div>
-      <div class="slide">React Development</div>
-      <div class="slide">Python Programming</div>
-      <div class="slide">SQL Database</div>
-      <div class="slide">Salesforce CRM</div>
+    <div class="hero-tags">
+      <div class="tag">New Batch: Feb 5</div>
+      <div class="tag">Live + Recorded</div>
+      <div class="tag">Job-Oriented</div>
+      <div class="tag">Installments Available</div>
     </div>
+    <div style="margin-top:40px">
+  <a href="#enquiry-form" class="btn primary" style="
+    padding:18px 34px;
+    font-size:16px;
+    border-radius:14px;
+    display:inline-block;
+  ">
+    Apply
+  </a>
+</div>
+
   </div>
 </section>
 
 <!-- COURSES -->
-<section class="container reveal">
-  <h2 class="section-title">Our Courses</h2>
-  <p class="section-desc">All courses are conducted for <b>2 hours daily (Except Sunday)</b>.</p>
+<section class="section">
+  <h2>Our Courses</h2>
+  <p class="sub">Complete details · Fees · Duration · Syllabus</p>
 
   <div class="courses">
-
-    <div class="course">
-      <i class="fa-brands fa-java"></i>
-      <h3>Java Full Stack</h3>
-      <ul><li>Core & Advanced Java</li><li>Spring Boot</li><li>Projects</li></ul>
+    <!-- Repeat cards -->
+    <div class="card">
+      <h3>Core Java</h3>
+      <div class="meta">60 Days · Live + Recorded</div>
+      <p>Java & OOP foundations</p>
+      <div class="price">₹7,000</div>
+      <div class="actions">
+        <a href="https://drive.google.com/file/d/1yzzy-Hw9kdkGoCjsQiRWC7F3v7Sk4Nn9/view?usp=sharing" target="_blank" class="btn outline">View Syllabus</a>
+      </div>
     </div>
 
-    <div class="course">
-      <i class="fa-solid fa-code"></i>
-      <h3>HTML / CSS / JavaScript</h3>
-      <ul><li>Responsive Design</li><li>Modern JS</li><li>Projects</li></ul>
+    <div class="card">
+      <h3>Python Programming</h3>
+      <div class="meta">60 Days · Live + Recorded</div>
+      <p>Python from basics to real-world</p>
+      <div class="price">₹13,000</div>
+      <div class="actions">
+        <a href="https://drive.google.com/file/d/14FLtK-SHEm0ZLFS1EWaxydMuu8G3OgCP/view?usp=sharing" target="_blank" class="btn outline">View Syllabus</a>
+      </div>
     </div>
 
-    <div class="course">
-      <i class="fa-brands fa-react"></i>
-      <h3>React</h3>
-      <ul><li>Hooks</li><li>State</li><li>Apps</li></ul>
+    <div class="card">
+      <h3>Frontend Development</h3>
+      <div class="meta">60 Days · HTML, CSS, JS</div>
+      <p>Modern UI development</p>
+      <div class="price">₹5,000</div>
+      <div class="actions">
+        <a href="https://drive.google.com/file/d/1F85dYSU-0PUNGogBJ3a3tlwDXLW5bBvp/view?usp=sharing" target="_blank" class="btn outline">View Syllabus</a>
+      </div>
     </div>
 
-    <div class="course">
-      <i class="fa-brands fa-python"></i>
-      <h3>Python</h3>
-      <ul><li>Core</li><li>Automation</li><li>Projects</li></ul>
+    <div class="card">
+      <h3>React (Beginner → Advanced)</h3>
+      <div class="meta">45 Days · Professional React</div>
+      <p>Advanced frontend engineering</p>
+      <div class="price">₹9,000</div>
+      <div class="actions">
+        <a href="https://drive.google.com/file/d/1jM4UXmWhGUNJCoV78S-LmweLX-e0_P5k/view?usp=sharing" target="_blank" class="btn outline">View Syllabus</a>
+      </div>
     </div>
 
-    <div class="course">
-      <i class="fa-solid fa-database"></i>
-      <h3>SQL</h3>
+    <div class="card">
+      <h3>Backend (Django + APIs)</h3>
+      <div class="meta">60 Days · Backend Track</div>
+      <p>Django, APIs & Databases</p>
+      <div class="price">₹15,000</div>
+      <div class="actions">
+        <a href="https://drive.google.com/file/d/1Rjf6x9nEAdZX8_5Uczr2M3Wllw2gsuF4/view?usp=sharing" target="_blank" class="btn outline">View Syllabus</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Salesforce CRM (Complete)</h3>
+      <div class="meta">6 Months · Enterprise CRM</div>
+      <p>Admin, automation & projects</p>
+      <div class="price">₹30,000</div>
+      <div class="actions">
+        <a href="https://drive.google.com/file/d/1MxNpImw5Nl7JZ6Qk_ABHnHT2mmloZ2DY/view?usp=sharing" target="_blank" class="btn outline">View Syllabus</a>
+      </div>
+    </div>
+  </div>
+<!-- ENQUIRY FORM -->
+<section id="enquiry-form" class="section">
+  <h2>Apply for the New Batch</h2>
+  <p class="sub">
+    New batch starts on <strong>February 5th</strong>.<br>
+    Fill the form below and our team will contact you shortly.
+  </p>
+
+  <div class="form-wrapper">
+<iframe
+  src="https://forms.gle/kJEsaN8w1ZU6X1TP6"
+  width="640"
+  height="900"
+  frameborder="0"
+  marginheight="0"
+  marginwidth="0">
+</iframe>
+
+
+  </div>
+</section>
+
+  <!-- WHY -->
+  <div class="why">
+    <h2>Why Tattvo Courses?</h2>
+    <div class="why-grid">
+      <div class="why-box">Industry-aligned curriculum</div>
+      <div class="why-box">Live mentor support</div>
+      <div class="why-box">Hands-on projects</div>
+      <div class="why-box">Career guidance</div>
+      <div class="why-box">Installment options</div>
+      <div class="why-box">Trusted by students</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>New Batch Starts February 5th</h2>
+    <p>Seats are limited. Enroll early to secure your place.</p>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917075899111" target="_blank" class="whatsapp">💬</a>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Vision -->
+    <div class="footer-col">
+      <h3>Our Vision</h3>
+      <p>
+        To be a trusted industry leader, delivering exceptional services through
+        modern technology, while continuously growing and creating lasting value
+        for our clients.
+      </p>
+    </div>
+
+    <!-- Categories -->
+    <div class="footer-col">
+      <h3>Categories</h3>
       <ul>
-        <li>Database Fundamentals</li>
-        <li>Queries & Joins</li>
-        <li>Real-time Practice</li>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Backend Support</a></li>
+        <li><a href="#">Salesforce CRM</a></li>
+        <li><a href="#">Cloud Migration</a></li>
+        <li><a href="#">Mobile App Development</a></li>
+        <li><a href="#">AI-Powered Analytics</a></li>
       </ul>
     </div>
 
-    <div class="course">
-      <i class="fa-solid fa-cloud"></i>
-      <h3>Salesforce</h3>
-      <ul><li>Admin</li><li>CRM</li><li>Use Cases</li></ul>
+    <!-- Navigation -->
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="../index.html">Tattvo Tech</a></li>
+        <li><a href="Tattvo-Courses/index.html">Tattvo Courses</a></li>
+      </ul>
+    </div>
+
+    <!-- Social + Contact -->
+    <div class="footer-col footer-right">
+      <h3>Follow Us</h3>
+
+      <div class="social-links">
+        <a href="https://x.com/TattvoTech?t=g-LQDmT6fKnVeJkjeaHB5A&s=08" target="_blank">X</a>
+        <a href="https://wa.me/message/HA3FPKEQLAZJN1" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/company/tattvo-tech/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/tattvotech?igsh=emszMWo0YXhkd281" target="_blank">Instagram</a>
+        <a href="https://youtube.com/@tattvotech?si=QdRjD6iqTS71AOgL" target="_blank">YouTube</a>
+      </div>
+
+      <h3 class="contact-title">Contact</h3>
+      <p>+91-7075899111</p>
+      <p>teamtattvotech@gmail.com</p>
     </div>
 
   </div>
-</section>
 
-<!-- VIDEO 
-<section class="container reveal">
-  <h2 class="section-title">Watch Our Training</h2>
-  <div class="video-wrap">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-  </div>
-</section>
--->
-<!-- TESTIMONIALS 
-<section class="container reveal">
-  <h2 class="section-title">What Our Students Say</h2>
-  <div class="testimonials">
-    <div class="testimonial"><i class="fa-solid fa-star"></i><p>Excellent training with real-time projects.</p><strong>– Student</strong></div>
-    <div class="testimonial"><i class="fa-solid fa-star"></i><p>Clear explanations and great support.</p><strong>– Graduate</strong></div>
-    <div class="testimonial"><i class="fa-solid fa-star"></i><p>Helped me crack interviews.</p><strong>– Developer</strong></div>
-  </div>
-</section>-->
-
-<!-- INFO -->
-<section class="info reveal">
-  <div class="container info-grid">
-    <div><h3>2 Hours / Day</h3><p>Mon – Sat</p></div>
-    <div><h3>Hands-On</h3><p>Live Projects</p></div>
-    <div><h3>Certified</h3><p>TattvoTech</p></div>
-  </div>
-</section>
-
-<!-- CERTIFICATE -->
-<section class="container reveal">
-  <div class="certificate">
-    <h2 class="section-title">Course Completion Certificate</h2>
-    <p class="section-desc">Receive an <b>Official TattvoTech Certificate</b>.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container footer-grid">
-    <div><h3>TattvoTech</h3><p>Career-focused technology training institute.</p></div>
-    <div><h3>Courses</h3><p>Java • Web • React • Python • SQL • Salesforce</p></div>
-    <div><h3>Contact</h3><p>info@tattvotech.com</p></div>
+  <div class="footer-bottom">
+    © 2025 TATTVO TECH. All rights reserved.
   </div>
 </footer>
 
-<!-- SALESFORCE FORM -->
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <h3>Course Enquiry</h3>
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000002vyj3"
-          method="POST" target="hidden_iframe" onsubmit="showSuccess()">
-      <input type="hidden" name="oid" value="00Dg5000002vyj3">
-      <input name="first_name" placeholder="First Name" required>
-      <input name="last_name" placeholder="Last Name" required>
-      <input name="email" placeholder="Email" required>
-      <input name="mobile" placeholder="Mobile" required>
-      <input name="city" placeholder="City">
-      <button id="submitBtn">Submit</button>
-    </form>
-  </div>
-</div>
-<iframe name="hidden_iframe" style="display:none"></iframe>
-
-<a class="whatsapp" href="https://wa.me/917075899111" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i> WhatsApp
-</a>
-
-<script>
-function toggleTheme(){document.body.classList.toggle("dark")}
-function openPopup(){popup.classList.add("active")}
-window.onclick=e=>{if(e.target.id==="popup")popup.classList.remove("active")}
-function showSuccess(){
-  const b=document.getElementById("submitBtn");
-  b.innerText="Submitted ✔";b.style.background="#28a745";
-}
-let i=0;
-setInterval(()=>{
-  i=(i+1)%5;
-  slider.style.transform=`translateX(-${i*350}px)`
-},2600);
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.opacity=1;
-      e.target.style.transform="none";
-    }
-  })
-},{threshold:.15});
-document.querySelectorAll(".reveal").forEach(el=>{
-  el.style.opacity=0;
-  el.style.transform="translateY(40px)";
-  obs.observe(el);
-});
-</script>
 
 </body>
 </html>
